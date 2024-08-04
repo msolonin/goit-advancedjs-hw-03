@@ -36,8 +36,8 @@ const onSearchFormSubmit = event => {
     .finally(() => {
       loaderEl.classList.add('is-hidden');
     })
-    .then(({ results }) => {
-      if (results.length === 0) {
+    .then(({ hits }) => {
+      if (hits.length === 0) {
         iziToast.error({
           message: 'За вашим запитом, зображень не знайдено!',
           position: 'topRight',
@@ -47,12 +47,16 @@ const onSearchFormSubmit = event => {
 
         return;
       }
-
-      const galleryCardsTemplate = results
+      const galleryCardsTemplate = hits
         .map(imgInfo => createGalleryCardTemplate(imgInfo))
         .join('');
 
       galleryEl.innerHTML = galleryCardsTemplate;
+      new SimpleLightbox('.gallery a', {
+        captionsData: 'alt',
+        captionDelay: 250,
+        });
+
     })
     .catch(err => {
       console.log(err);

@@ -8,11 +8,11 @@
 
 export const createGalleryCardTemplate = pictureInfo => {
   return `
-  <li class="gallery-item">
+  <li class="gallery-card">
     <a class="gallery-link" href="${pictureInfo.largeImageURL}">
       <img
-        class="gallery-image"
-        src="${pictureInfo.previewURL}"
+        class="gallery-img"
+        src="${pictureInfo.webformatURL}"
         alt="${pictureInfo.tags}"
         />
     </a>

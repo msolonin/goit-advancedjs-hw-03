@@ -6,6 +6,7 @@ export const fetchPhotos = query => {
   });
 
   return fetch(`https://pixabay.com/api/?${searchParams}`).then(response => {
+    console.log(`https://pixabay.com/api/?${searchParams}`);
     if (!response.ok) {
       throw new Error(response.status);
     }
