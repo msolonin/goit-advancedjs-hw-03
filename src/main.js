@@ -49,7 +49,7 @@ const onSearchFormSubmit = event => {
       new SimpleLightbox('.gallery a', {
         captionsData: 'alt',
         captionDelay: 250,
-        });
+        }).refresh();
 
     })
     .catch(err => {
