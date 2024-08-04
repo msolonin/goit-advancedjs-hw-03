@@ -1,5 +1,6 @@
 @import url('./common.css');
-/*@import url('izitoast/dist/css/iziToast.css');*/
+@import url('izitoast/dist/css/iziToast.css');
+@import url('simplelightbox/dist/simple-lightbox.min.css');
 
 .container {
   width: 1200px;
@@ -79,4 +80,25 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+.gallery-info {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+}
+
+.info-item {
+  text-align: center;
+}
+
+.info-item strong {
+  display: block;
+  font-weight: bold;
+}
+
+.info-item span {
+  display: block;
 }

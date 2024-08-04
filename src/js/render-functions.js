@@ -1,10 +1,3 @@
-// export const createGalleryCardTemplate = ({ urls: { regular }, alt_description }) => {
-//   return `
-//   <li class="gallery-card">
-//     <img class="gallery-img" src="${regular}" alt="${alt_description}" />
-//   </li>
-//   `;
-// };
 
 export const createGalleryCardTemplate = pictureInfo => {
   return `
@@ -16,6 +9,24 @@ export const createGalleryCardTemplate = pictureInfo => {
         alt="${pictureInfo.tags}"
         />
     </a>
+<div class="gallery-info">
+    <div class="info-item">
+      <strong>Likes</strong>
+      <span>${pictureInfo.likes}</span>
+    </div>
+    <div class="info-item">
+      <strong>Views</strong>
+      <span>${pictureInfo.views}</span>
+    </div>
+    <div class="info-item">
+      <strong>Comments</strong>
+      <span>${pictureInfo.comments}</span>
+    </div>
+    <div class="info-item">
+      <strong>Downloads</strong>
+      <span>${pictureInfo.downloads}</span>
+    </div>
+  </div>
   </li>
   `;
 };
