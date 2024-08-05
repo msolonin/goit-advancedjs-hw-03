@@ -8,6 +8,12 @@ const searchFormEl = document.querySelector('.js-search-form');
 const galleryEl = document.querySelector('.js-gallery');
 const loaderEl = document.querySelector('.js-loader');
 
+
+let lightbox =  new SimpleLightbox('.gallery a', {
+        captionsData: 'alt',
+        captionDelay: 250,
+        });
+
 const onSearchFormSubmit = event => {
   event.preventDefault();
 
@@ -38,6 +44,7 @@ const onSearchFormSubmit = event => {
         });
 
         searchFormEl.reset();
+        galleryEl.innerHTML = '';
 
         return;
       }
@@ -46,10 +53,7 @@ const onSearchFormSubmit = event => {
         .join('');
 
       galleryEl.innerHTML = galleryCardsTemplate;
-      new SimpleLightbox('.gallery a', {
-        captionsData: 'alt',
-        captionDelay: 250,
-        }).refresh();
+      lightbox.refresh();
 
     })
     .catch(err => {
